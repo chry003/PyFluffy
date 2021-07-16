@@ -1,2 +1,2 @@
 # PyFluffy
-It's a game framework that is inspired by godot and pygame. New physics engine and more is added idk yeah!
+It's a game framework for python that uses pygame under the hood. It has physics engine and collison system, it also support entity based system and physics layer mask to handle collison for specific objects or entity in game.
