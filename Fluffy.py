@@ -9,6 +9,8 @@ true = True
 false = False
 nil = None
 
+fluffy_alive = true
+
 DEFAULT_KEYS = {
             "right": {
                     "keystrokes": [K_RIGHT, K_d],
@@ -68,14 +70,18 @@ def clear_screen_pygame(window, color):
     return window.fill(color)
 
 def update_pygame():
+    global fluffy_alive
+
     # check if user wants to quit the application
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            fluffy_alive = false
 
     update = pygame.display.update()
     return update
+
+def is_program_alive():
+    return fluffy_alive
 
 #############################################
 #               Basic Input                 #
@@ -155,7 +161,7 @@ if (__name__ == "__main__"):
         for j in range(10, 500, 10):
             grid.append(init_rect(j, i, 8, 8))
 
-    while true:
+    while is_program_alive():
         clear_screen_pygame(window, (255, 255, 255))
 
         draw_rect(window, (0, 0, 0), player)
